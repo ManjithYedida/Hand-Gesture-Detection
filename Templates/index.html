@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Gesture Recognition</title>
+   <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Real-time Gesture Recognition</h1>
+
+    <!-- Hidden initially -->
+    <div class="video-container" id="videoContainer">
+        <img id="video-feed" src="" alt="Gesture Stream">
+
+
+    </div>
+
+    <div class="status">
+        Status: <span id="statusText">⏳ Waiting for Start Streaming...</span>
+    </div>
+
+    <div class="controls">
+        <button class="btn start-btn" onclick="startStream()">Start Stream</button>
+        <button class="btn stop-btn" onclick="stopStream()">Stop Stream</button>
+    </div>
+
+    <script>
+        const videoFeed = document.getElementById("video-feed");
+        const videoContainer = document.getElementById("videoContainer");
+        const statusText = document.getElementById("statusText");
+
+        function startStream() {
+            videoFeed.src = "/videofeed";
+            videoContainer.style.display = "block";  // Show the video container
+            statusText.innerHTML = "🟢 Streaming...";
+            statusText.style.color = "#00ff99";
+        }
+
+        function stopStream() {
+            videoFeed.src = "";
+            videoContainer.style.display = "none";  // Hide the video container
+            statusText.innerHTML = "🔴 Stream Stopped";
+            statusText.style.color = "#ff5555";
+        }
+    </script>
+</body>
+</html>

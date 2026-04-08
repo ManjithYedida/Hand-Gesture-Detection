@@ -1,0 +1,132 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    display: none;  /* Initially hidden */
+    transition: 0.5s ease-in-out;
+}
+
+#video-feed {
+    width: 640px;
+    height: 480px;
+    border-radius: 12px;
+    border: 4px solid #00ff99;
+    transition: 0.3s ease-in-out;
+}
+
+#video-feed:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px #00ff99;
+}
+
+/* Status */
+.status {
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Buttons */
+.controls {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+.start-btn {
+    background-color: #00ff99;
+    color: black;
+}
+
+.start-btn:hover {
+    background-color: #00cc77;
+}
+
+.stop-btn {
+    background-color: #ff5555;
+    color: white;
+}
+
+.stop-btn:hover {
+    background-color: #cc4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #video-feed {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .status {
+        font-size: 16px;
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
